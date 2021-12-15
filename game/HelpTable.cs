@@ -30,12 +30,9 @@ namespace game
             {
                 for (int j = 0; j < N + 1; j++)
                 {
-                    if (i == 0 || j == 0)
+                    if (i == 0 || j == 0 && table[i, j].Length > 4)
                     {
-                        if (table[i, j].Length > 4)
-                        {
-                            Console.Write($"{table[i, j].Substring(0, 4)}\t");
-                        }
+                        Console.Write($"{table[i, j].Substring(0, 4)}\t");
                     }
                     else
                     {
