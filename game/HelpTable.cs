@@ -23,16 +23,19 @@ namespace game
             {
                 for (int j = 0; j < N; j++)
                 {
-                    table[j + 1, i + 1] = WinnerDetermination.FindWinner(moves, moves[i],moves[j]);
+                    table[j + 1, i + 1] = WinnerDetermination.FindWinner(moves, moves[i], moves[j]);
                 }
             }
-            for (int i = 0; i < N+1; i++)
+            for (int i = 0; i < N + 1; i++)
             {
-                for (int j = 0; j < N+1; j++)
+                for (int j = 0; j < N + 1; j++)
                 {
                     if (i == 0 || j == 0)
                     {
-                        Console.Write($"{table[i, j].Substring(0, 4)}\t");
+                        if (table[i, j].Length > 4)
+                        {
+                            Console.Write($"{table[i, j].Substring(0, 4)}\t");
+                        }
                     }
                     else
                     {
